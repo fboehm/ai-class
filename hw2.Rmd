@@ -43,14 +43,12 @@ we set $x_0 = 1$ and vary $x$.
 
 ```{r}
 tibble::tibble(x = 1:100 / 100, lhs = x ^ 2, rhs = 1 ^ 2 + 2 * (x - 1) )  %>%
-  ggplot() + geom_line(aes(x = lhs, y = rhs)) + geom_line(aes(x = lhs, y = lhs))
+  ggplot() + geom_line(aes(y = lhs, x = x, colour = "lhs")) + geom_line(aes(y = rhs, x = x, colour = "rhs"))
 
 ```
 
-We plot along the horizontal axis the values of $f(x)$ and along the 
-vertical axis the values of $f(x_0) + f'(x_0) (x - x_0)$. For reference, we 
-include a line through the origin with slope 1. 
-
+We plot along the horizontal axis the values of $x$ and along the 
+vertical axis the values of $f(x_0) + f'(x_0) (x - x_0)$ and those of $f(x)$. "lhs" denotes $f(x)$, while "rhs" denotes $f(x_0) + f'(x_0) (x - x_0)$
 
 
 
@@ -87,6 +85,42 @@ Note that the last inequality follows from line 2 because $\mathbb{E}\left[ X - 
 
 
 # Exercise 3
+
+## Part i
+
+We recall the definition of $f$ continuous: $f$ continuous if for any 
+$\epsilon > 0$ there is a $\delta > 0$ such that 
+$d_X(x,y) < \delta \implies d_Y(f(x) - f(y)) < \epsilon$. 
+To see that $f$ is continuous, let $\epsilon > 0$. 
+Then, observe that $d_X(x,y) < \frac{\epsilon}{L} \implies d_Y(f(x), f(y))$, 
+so $\frac{\epsilon}{L}$ is the desired $
+delta$.
+
+## Part ii
+
+
+## Part iii
+
+$f$ is not differentiable because $\lim_{x \downarrow 0} f'(x) = 1$ while $\lim_{x \uparrow 0} f'(x) = -1$.
+
+To show that $f$ is 1-lipchitz on $\mathbb{R}$, consider the arbitrary interval $(a,b)$. If $a \ge 0$ then $f(b) - f(a) = b-a$. If $b \le 0$, then $f(b) - f(a) = - (b - a)$. If $a < 0$ and $b > 0$ then $f(b) - f(a) = | b - |a|| \le |b - a|$. 
+
+
+## Part iv
+
+
+
+
+## Part v
+
+No. On $\mathbb{R}$, the slope, $f'(x) = 2x$ goes to infinity as $x \to \infty$. 
+
+To be precise, suppose that there is a constant $C$ such that $f$ is C-lipschitz. $f$ C-lipschitz on $\mathbb{R}$ means that for any two points x and y, $|f(x) - f(y)| \le C|x - y|$. 
+
+Choose $x = C$ and $y = C + 1$. Then $f(x) = C^2$ and $f(y) = C ^ 2 + 2C + 1$, so $|f(x) - f(y)| = 2C + 1$, which is a contradiction. Thus, it must be that $f$ is not L-lipschitz on $\mathbb{R}$.
+
+
+
 
 
 

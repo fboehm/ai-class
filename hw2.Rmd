@@ -1,0 +1,107 @@
+---
+title: "Homework 2"
+author: "Frederick J. Boehm"
+date: "9/21/2020"
+output: pdf_document
+---
+
+# Exercise 1
+
+## i $\iff$ iii
+
+we want to show that i $\iff$ iii. 
+
+We follow the hint. 
+
+$$
+f(x) = f(x_0) + f'(x_0) (x - x_0) + \frac{1}{2}f''(\eta)(x - \eta) ^ 2
+$$
+
+We then see that $f''(\eta) \ge 0$ means that the last term in the right-hand side is non-negative. Thus, $f(x) \ge f(x_0) + f'(x_0) (x - x_0)$. For the reverse implication, reverse the above steps. 
+
+We thus see that i $\iff$ iii. 
+
+## Plot for ii
+
+
+We let $f(x) = x ^ 2$ with domain $[0, 1]$. We vary $\lambda$ from zero to one below.
+
+```{r}
+library(magrittr)
+library(ggplot2)
+tibble::tibble(x = 1:100 / 100, xsq = x ^ 2)  %>%
+  ggplot() + geom_line(aes(y = x, x = x)) + geom_line(aes(y = xsq, x = x))
+```
+For x = 0, y = 1, we see that 
+
+$$f(\lambda x + (1 - \lambda)y) \le \lambda f(x) + (1-\lambda)f(y)$$
+
+## Plot for iii
+
+we set $x_0 = 1$ and vary $x$.
+
+
+```{r}
+tibble::tibble(x = 1:100 / 100, lhs = x ^ 2, rhs = 1 ^ 2 + 2 * (x - 1) )  %>%
+  ggplot() + geom_line(aes(x = lhs, y = rhs)) + geom_line(aes(x = lhs, y = lhs))
+
+```
+
+We plot along the horizontal axis the values of $f(x)$ and along the 
+vertical axis the values of $f(x_0) + f'(x_0) (x - x_0)$. For reference, we 
+include a line through the origin with slope 1. 
+
+
+
+
+
+# Exercise 2
+
+## Discrete random variables
+
+A discrete random variable $X$ taking countably many values $x_i$ has expectation $\mathbb{E}X = \sum_{i = 1} ^ {\infty}p_ix_i$. 
+
+$$
+\begin{aligned}
+f(\mathbb{E}X) = f(\sum_i p_ix_i) \le \sum_i p_if(x_i) = \mathbb{E}\left(f(X)\right)
+\end{aligned}
+$$
+where we use induction on the natural numbers to argue that the 
+inequality ii from question 1 extends to countably many summands. 
+
+
+
+## General random variables
+
+We follow the hint.
+
+$$
+\begin{aligned}
+f(X) &\ge f(\mathbb{E}X) + f'(\mathbb{E}X)\left(\left[ X - \mathbb{E}X\right]\right) \\
+&\implies \mathbb{E}\left( f(X)\right) \ge f(\mathbb{E}X) + f'(\mathbb{E}X)\left(\mathbb{E}\left[ X - \mathbb{E}X\right]\right) \\
+&\implies \mathbb{E}\left( f(X)\right) \ge f(\mathbb{E}X)
+\end{aligned}
+$$
+
+Note that the last inequality follows from line 2 because $\mathbb{E}\left[ X - \mathbb{E}X\right] = \mathbb{E}X - \mathbb{E}X = 0$.
+
+
+# Exercise 3
+
+
+
+
+
+# Exercise 4
+
+
+
+
+# Exercise 5
+
+
+
+
+# Exercise 6
+
+

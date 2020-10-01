@@ -1,0 +1,67 @@
+---
+title: "Homework 3"
+author: "Frederick J. Boehm"
+date: "10/1/2020"
+output: pdf_document
+---
+
+# Q1
+
+## Q1, part a
+
+We proceed by induction. First, we consider the set $\mathcal{F}_{x_1}$. We need to show that the size of $\mathcal{F}_{x_1}$ is 2. This follows from the observation that the sets $\{0\}$ and $\{1\}$ are in $\mathcal{F}_{x_1}$. 
+
+Now, assume that the size of $\mathcal{F}_{x_1,\ldots, x_n}$ is $n+1$. 
+We want to show that the size of $\mathcal{F}_{x_1,\ldots, x_{n+1}}$ is $n + 2$. 
+
+Suppose, without loss of generality, that the $x_i$, for $i = 1, \ldots, n$ are ordered such that $x_1 < x_2 < \ldots < x_n$.  
+
+Denote the $n + 1$ elements of $\mathcal{F}_{x_1, \ldots, x_n}$ by $\{0\ldots 0\}$, $\{0\ldots 0 1\}$,$\{0\ldots 0 11\}$, ..., $\{1\ldots 1\}$, where each element contains $n$ digits, all zeros and ones, and the $k^{th}$ element ends with $k-1$ ones.
+
+Observe that each element of $\mathcal{F}_{n + 1}$ has $n + 1$ binary entries. $x_{n + 1}$ lies somewhere on the real line. If $x_{n +1} > x_n$, then we can specify the elements of $\mathcal{F}_{n + 1}$ as resulting from the appending of a one to every element of $\mathcal{F}_{n}$ along with an additional element that results from the $(n+1)$ points all mapping to zero. It's a little trickier when $x_{n + 1}$ lies between $x_{k}$ and $x_{k + 1}$. To illustrate the idea, suppose that $k = 2$, so $x_{n + 1}$ is between $x_2$ and $x_3$. Then the elements of $\mathcal{F}_{x_1, \ldots, x_{n + 1}}$ result from inserting a digit between the second and third elements of each function in $\mathcal{F}_{x_1, \ldots, x_n}$. Whether that digit is a zero or one depends on the other digits. The key is to maintain the runs of consecutive zeros and consecutive ones. You then see that there are $n + 2$ functions in $\mathcal{F}_{x_1, \ldots, x_{n + 1}}$.  
+
+
+## Q1, part b
+
+Let's first establish that the vc dimension of a single interval is 2. We follow the arguments in Ch 8 of Vershynin's book. 
+
+Let $\mathcal{F} = \{1_{[a,b]}}$ for $a < b$. To see that there's a two-point set $\Lambda$ shattered by $\mathcal{F}$, observe that, for $\Lambda = \{0 , 2\}$, we have the four ($2 ^ 2$) functions $g: \Lambda \to \{0, 1\}$ as restrictions of an indicator function (for some interval $[a,b]$) to the set $\Lambda$. For example, the function mapping $\Lambda$ to $\{00\}$ corresponds, for example, to the restriction of $[-2, -1]$ to $\Lambda$. $f = 1_{[-1, 1]}$ restricted to $\Lambda$ gives the function that maps to $\{10\}$ while intervals $[0, 2]$ and $[3,4]$ yield, upon restriction to $\Lambda$ functions mapping to $\{11}$ and $\{01\}$. 
+
+Thus, we see that $vc(\mathcal{F})$ is at least 2. To show that it's exactly two, we consider a three-point set $\{x, y, z}$, with $x < y< z$ and see that the interior point, $y$ can't map to zero when the other two points map to one. This is because this function, ie, $\{101\}$ can't be written as the restriction of a single interval to the 3-point set. Thus, the vc dimension of $\mathcal{F}$ is 2. 
+
+Now, we consider the real problem. Note that $\mathcal{A}$ can be written as $1_{[a,b]} + 1_{[c,d]}$. We then use reasoning like that above to see that there's a set of four points that can be shattered, but that no set of five points can be shattered by $\mathcal{A}$. To see that the four-point set $\Lambda = \{-5, -3, 0, 2 \}$ can be shattered by $\mathcal{A}$, treat the subsets $\{-5, -3\}$ and $\{0,2\}$ like we did above. Since the 16 functions all are restrictions of elements of $\mathcal{A}$ to $\Lambda$, we know that the vc dimension of $\mathcal{A}$ is at least 4. Now, we want to consider a five-point set, $\{p, q, r, s, t\}$ with $p < q < r< s< t$. Since there are five points, any partitioning of the five points into two groups yields a set with at least three points, we see that there is an "interior" point in at least one of the intervals, which is "problematic" for the reasons discussed above in the case of a single interval. 
+
+
+
+
+## Q1, part c
+
+We 
+
+
+## Q1, part d
+
+## Q1, part e
+
+
+# Q2
+
+## Q2, part a
+
+
+## Q2, part b
+
+# Q3
+
+# Q4
+
+# Q5
+
+## Q5, part a
+
+
+
+
+## Q5, part b
+
+

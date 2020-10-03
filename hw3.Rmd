@@ -23,25 +23,69 @@ Observe that each element of $\mathcal{F}_{n + 1}$ has $n + 1$ binary entries. $
 
 ## Q1, part b
 
-Let's first establish that the vc dimension of a single interval is 2. We follow the arguments in Ch 8 of Vershynin's book. 
+Note that $\mathcal{A}$ can be written as $1_{[a,b]} + 1_{[c,d]}$. 
+We then use reasoning like that above to see that there's a set of four points that can be shattered, but that no set of five points can be shattered by $\mathcal{A}$.
+To see that the four-point set $\Lambda = \{-5, -3, 0, 2 \}$ can be shattered by $\mathcal{A}$, treat the subsets $\{-5, -3\}$ and $\{0,2\}$ like we did above. 
+Since the 16 functions all are restrictions of elements of $\mathcal{A}$ to $\Lambda$, we know that the vc dimension of $\mathcal{A}$ is at least 4. 
+Now, we want to consider a five-point set, $\{p, q, r, s, t\}$ with $p < q < r< s< t$. Since there are five points, 
+any partitioning of the five points into two groups yields 
+a set with at least three points, we see that there is an "interior" point in one of the intervals. 
+This is problematic because we can't get the "interior" point mapped to zero while the two exterior points map to one.
 
-Let $\mathcal{F} = \{1_{[a,b]}}$ for $a < b$. To see that there's a two-point set $\Lambda$ shattered by $\mathcal{F}$, observe that, for $\Lambda = \{0 , 2\}$, we have the four ($2 ^ 2$) functions $g: \Lambda \to \{0, 1\}$ as restrictions of an indicator function (for some interval $[a,b]$) to the set $\Lambda$. For example, the function mapping $\Lambda$ to $\{00\}$ corresponds, for example, to the restriction of $[-2, -1]$ to $\Lambda$. $f = 1_{[-1, 1]}$ restricted to $\Lambda$ gives the function that maps to $\{10\}$ while intervals $[0, 2]$ and $[3,4]$ yield, upon restriction to $\Lambda$ functions mapping to $\{11}$ and $\{01\}$. 
-
-Thus, we see that $vc(\mathcal{F})$ is at least 2. To show that it's exactly two, we consider a three-point set $\{x, y, z}$, with $x < y< z$ and see that the interior point, $y$ can't map to zero when the other two points map to one. This is because this function, ie, $\{101\}$ can't be written as the restriction of a single interval to the 3-point set. Thus, the vc dimension of $\mathcal{F}$ is 2. 
-
-Now, we consider the real problem. Note that $\mathcal{A}$ can be written as $1_{[a,b]} + 1_{[c,d]}$. We then use reasoning like that above to see that there's a set of four points that can be shattered, but that no set of five points can be shattered by $\mathcal{A}$. To see that the four-point set $\Lambda = \{-5, -3, 0, 2 \}$ can be shattered by $\mathcal{A}$, treat the subsets $\{-5, -3\}$ and $\{0,2\}$ like we did above. Since the 16 functions all are restrictions of elements of $\mathcal{A}$ to $\Lambda$, we know that the vc dimension of $\mathcal{A}$ is at least 4. Now, we want to consider a five-point set, $\{p, q, r, s, t\}$ with $p < q < r< s< t$. Since there are five points, any partitioning of the five points into two groups yields a set with at least three points, we see that there is an "interior" point in at least one of the intervals, which is "problematic" for the reasons discussed above in the case of a single interval. 
 
 
 
 
 ## Q1, part c
 
-We 
+We first show that vc dimension of the collection of axis-aligned squares is at least 3; that is, there exists a set of three points that is shattered by the collection of such squares.
+
+Consider the points in $\mathbb{R} ^ 2$: $(0,0)$, $(2,0)$, and $(1, -1)$. For each point, we can draw a square that encompasses exactly that one point and neither of the other two. Similarly, we can draw squares that encompass all subsets of size 2 (while excluding exactly one point per square). Finally, it's possible to draw a square that contains all three points.
+
+Now, we want to show that no set of four points can be shattered by the collection of such squares.
+
+Without loss of generality, we assume that the set of four points share no coordinates with each other so that we can identify a unique point with the greatest $y$ value and that with the least $y$ value. Similarly, we identify the point with the greatest and least $x$ values. Suppose, without loss of generality, that the difference between the greatest and least $x$ values is less than the difference between the greatest and least $y$ values. Then, see that there is no square that assigns value 1 to those points with the greatest and least $y$ values while assigning 0 to those points with the greatest and least $x$ values. Thus, a set of four points can't be shattered by the collection of axis-aligned squares.
+
+
 
 
 ## Q1, part d
 
+Here, we need to show that there's a set of four points that is shattered by the 
+axis aligned rectangles, but that no set of five points is shattered by the same.
+
+Consider the four points: $(0,2)$, $(1, 4)$, $(3,3)$, and $(2, 1)$.
+
+That a single function can map all four points to one and that we can draw a rectangle around exactly one point (for each of the four points) is apparent. Similarly, one can draw a single rectangle around any pair of the four points. This is especially apparent with our choice of points. With the four points having distinct x values and distinct y values and all being on the convex hull, we recognize that one can draw a rectangle around any subset of exactly three points. 
+
+Now, take a set of any five points. The smallest rectangle that encloses the five points
+is actually defined by only four points, since there are four edges. Thus, a fifth 
+point is either (also) on an edge or in the interior of the smallest rectangle. 
+
+Thus, we can't use rectangles to choose all subsets of size four. 
+
+
+
 ## Q1, part e
+
+We first show that a set of three points can be shattered by the set of circles. 
+
+Consider the points $(0,0)$, $(0,2)$, and $(2,0)$. It's then apparent that we can draw a circle around any subset of the points. For example, center a circle at (0,1) with radius $1 + \epsilon$ to get only the two points on the y axis. Center a circle at $(2,2)$ - with radius $2 + \epsilon$ to get only the points not at the origin. 
+
+Now, we need to show that no set of four points can be shattered by the collection of circles.
+
+We assume that the four points have a quadrilateral convex hull. If they don't then we're done by the above results.
+
+For the quadrilateral convex hull, let the difference in the extremes of y axis values be less than the difference in extremes of the x axis values. 
+
+Then we can't get a circle that contains the two points with the greatest x axis difference while avoiding the two points with the greatest y axis difference. 
+
+Thus, a set of four points can't be shattered by circles. So vc of the collection of circles is 3.
+
+
+
+
+
 
 
 # Q2
@@ -53,13 +97,44 @@ We
 
 # Q3
 
+
+
+
 # Q4
+
+We first recall that 
+
+$\mathcal{F}_{x_1, \ldots, x_n} = \{(f(x_1), \ldots, f(x_n)) \}$ and 
+$\mathcal{H}_{x_1, \ldots, x_n} = \{(h(x_1), \ldots, h(x_n)) \}$
+
+We know that $T$ maps to $\{0, 1\}$, so $h\in \mathcal{H}$ also maps to $\{0,1\}$. 
+Suppose that the vc dimension of $\mathcal{F}$ is $d$. 
+We then ask, is the vc dimension of $\mathcal{H}$ also equal to $d$? 
+
+
 
 # Q5
 
 ## Q5, part a
 
+We use Lemma 1.38 to see that 
 
+$$\mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - 
+\mathbb{E}f(X)| > t \right) \le 2\mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - f(Y_i) | > \frac{t}{2} \right)$$
+
+The above inequality implies that 
+
+$$\int \mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - 
+\mathbb{E}f(X)| > t \right)dt  \le \int \mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - f(Y_i) | > \frac{t}{2} \right)dt$$
+
+From this, we get the desired result because 
+
+$$\int \mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - 
+\mathbb{E}f(X)| > t \right)dt = \mathbb{E}\left( \sup |\frac{1}{n}\sum f(X_i) - 
+\mathbb{E}f(X)|\right)$$
+and 
+
+$$\int \mathbb{P}\left( \sup |\frac{1}{n}\sum f(X_i) - f(Y_i) | > \frac{t}{2} \right)dt = \mathbb{E}\left( \sup |\frac{1}{n}\sum f(X_i) - f(Y_i) | \right)$$
 
 
 ## Q5, part b

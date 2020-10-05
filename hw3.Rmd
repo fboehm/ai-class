@@ -132,6 +132,10 @@ We know that $T$ maps to $\{0, 1\}$, so $h\in \mathcal{H}$ also maps to $\{0,1\}
 Suppose that the vc dimension of $\mathcal{F}$ is $d$. 
 We then ask, is the vc dimension of $\mathcal{H}$ also equal to $d$? 
 
+We note that 
+
+$$\mathbb{E}((f(X) - T(X)) ^ 2) = \mathbb{E}(|f(X) - T(X)|) = \mathbb{P}(f(X) \neq T(X))$$
+
 
 
 # Q5

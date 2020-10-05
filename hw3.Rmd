@@ -92,10 +92,31 @@ Thus, a set of four points can't be shattered by circles. So vc of the collectio
 
 ## Q2, part a
 
+We recognize that the expected value of $|\{i: X_i \in C \}|$ is $area(C)n$. We thus 
+need a statement about the deviation of $|\{i: X_i \in C \}|$ from its expected value. 
+
+$$
+\begin{aligned}
+\mathbb{E}(\sup_{C \in \mathcal{C}}|\frac{|\{i: X_i \in C \}|}{n} - area(C)| ) \le K \sqrt{\frac{vc(\mathcal{C})}{n}} = K\sqrt{\frac{3}{n}}
+\end{aligned}
+$$
+
+Our bound is achieved by way of Theorem 8.3.23 in Vershynin's book. 
+
+
 
 ## Q2, part b
 
+
+
+
+
 # Q3
+
+We follow the hint and start by placing $n$ points on the unit circle. Every subset of the $n$ poitns is a convex polygon that by definition doesn't contain the points that aren't in the subset. This property indicates that the a set of size $n$ can be shattered by the collection of $d$-gons, with $d \le n$. Letting $n$ be arbitrarily large, we see that a set of $n$ points on the 
+unit circle can be shattered by the collection of $d$-gons ($d \le n$). Thus, such sets of arbitrarily large size can be shattered, so the vc dimension is $\infty$.
+
+
 
 
 

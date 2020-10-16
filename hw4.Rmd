@@ -1,0 +1,114 @@
+---
+title: "Homework 4"
+author: "Frederick J. Boehm"
+date: "10/15/2020"
+classoption: landscape
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+## Question 1
+
+
+
+## Question 2
+
+We calculate (where we take expectations with respect to the joint distribution):
+
+$$
+\begin{aligned}
+D(P_{12}|| P_1P_2) &= \mathbb{E}\left( - \log(2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}) + \log(2\pi\sigma_1\sigma_2)  -\frac{1}{2(1-\rho^2)}\left[\frac{(X_1 - \mu_1)^2}{\sigma_1 ^ 2} + \frac{(X_2 - \mu_2^2)}{\sigma_2 ^ 2} - \frac{2\rho(X_1 - \mu_1)(X_2 - \mu_2)}{\sigma_1\sigma_2}\right] + \frac{(X_1 - \mu_1)^2}{\sigma_1 ^ 2} + \frac{(X_2 - \mu_2)^2}{\sigma_2 ^ 2}\right)\\
+&= - \frac{1}{2}\log(1-\rho^2) - \frac{1}{2(1-\rho^2)}\left[ 1 + 1 - \frac{2\rho}{\sigma_1\sigma_2}\rho\sigma_1\sigma_2\right] + \frac{1}{2} + \frac{1}{2}\\
+&= - \frac{1}{2}\log(1-\rho^2) - \frac{1}{2(1-\rho^2)}\left[ 2-2\rho^2\right] + 1\\
+&= - \frac{1}{2}\log(1-\rho^2)
+\end{aligned}
+$$
+
+
+
+## Question 3
+
+
+
+
+
+## Question 4
+
+## Question 5
+
+## Question 6
+
+### 6i
+
+$$
+\begin{aligned}
+l(\theta) = \log L(\theta) = \log f_{\theta}(x) &= x\log \theta + (1-x)\log (1-\theta) \\
+&\implies \frac{d}{d\theta} l = \frac{x}{\theta} - \frac{1-x}{1-\theta} = \frac{x- \theta}{\theta(1-\theta)} \\
+&\implies \mathbb{E}\left(\frac{dl}{d\theta}\right)^2 = \mathbb{E}\left(\frac{(x-\theta)^2}{\theta^2(1-\theta)^2} \right)\\
+&= \frac{Var(X)}{\theta ^ 2(1-\theta)^2} \\
+&\implies \mathcal{I}(\theta) = \frac{1}{(1-\theta) \theta}
+\end{aligned}
+$$
+
+### 6ii
+
+We calculate partial derivatives:
+
+$$\begin{aligned}
+\frac{\partial l}{\partial \mu} &= \frac{X - \mu}{\sigma ^ 2} \\
+\frac{\partial l}{\partial \sigma} &= \frac{-1}{\sigma} + \frac{(X - \mu)^2}{\sigma ^ 3}\\
+\frac{\partial^2 l}{\partial \mu^2} &= \frac{-1}{\sigma^2}\\
+\frac{\partial^2 l}{\partial \mu\partial \sigma} &= \frac{-2(X - \mu)}{\sigma^3}\\
+\frac{\partial^2 l}{\partial \sigma^2} &= \frac{1}{\sigma ^ 2} - \frac{3(X - \mu)^2}{\sigma ^ 4}
+\end{aligned}
+$$
+
+Taking (negative) expectations of the three second partial derivatives, we see that we have:
+
+$$
+\mathcal{I}(\mu, \sigma) = \begin{pmatrix}
+\frac{1}{\sigma^2} & 0 \\
+0 & \frac{2}{\sigma ^ 2} 
+\end{pmatrix}
+$$
+
+
+
+## Question 7
+
+### 7, part i
+
+
+
+
+
+For the second conclusion, we want to use the weak law of large numbers. We need to verify that 
+the assumptions of the theorem are met.
+The weak law of large numbers states that 
+
+
+
+
+### 7, part ii
+
+We need to show that $V_n^2$ has bounded differences.
+
+$$
+\begin{aligned}
+V_n^2 &= \frac{1}{n-1}\sum_{i = 1}^n(Y_i - \bar Y) ^ 2\\
+|V_n^2 - V_{n'}^2| &= \frac{1}{n^2(n - 1)}|\sum_{i = 1}^n(nY_i - \sum_{i=1}^n Y_i) ^ 2 - \sum_{i = 1}^n(nY_i - \bar Y') ^ 2
+\end{aligned}
+$$
+
+
+### 7, part iii
+
+
+
+## Question 8
+
+
+
+

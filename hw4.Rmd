@@ -30,11 +30,40 @@ $$
 
 ## Question 3
 
+### 3a
+
+Let $w_{ij} = P_{12}(X_1 = i, X_2 = j)$. Then $\sum_iw_{ij} = q_j = P_{2}(X_2 = j)$ and $\sum_j w_{ij} = p_i = P_1(X_1 = i)$.
+
+Then, 
+
+$$
+\begin{aligned}
+I(X_1, X_2) &= \sum_{i,j}w_{ij}\log \frac{w_{ij}}{p_iq_j} \\
+&= \sum_{i,j}w_{ij}\log w_{ij} - \sum_{i,j} w_{ij}\log p_i - \sum_{i,j} w_{ij} \log q_j \\
+&= \sum_{i,j}w_{ij}\log w_{ij} - \sum_{i} p_{i}\log p_i - \sum_{j} q_{j} \log q_j \\
+&= - H((X_1, X_2)) + H(X_1) + H(X_2)
+\end{aligned}
+$$
 
 
+### 3b
+
+$$
+\begin{aligned}
+I(X_1, X_2) &= \sum_{i,j}w_{ij}\log \frac{w_{ij}}{p_iq_j} \\
+&= \sum_{i,j}w_{ij}\log \frac{u_{i|j}q_j}{p_iq_j} \\
+&= \sum_{i,j}w_{ij}\log \frac{u_{i|j}}{p_i} \\
+&= \sum_{i,j}w_{ij}\log u_{i|j} - \sum_{i,j}w_{ij}\log p_i\\
+&= \sum_{i,j}w_{ij}\log u_{i|j} - \sum_{i}p_{i}\log p_i \\
+&= H(X) - H(X|Y)
+\end{aligned}
+$$
 
 
 ## Question 4
+
+
+
 
 ## Question 5
 
@@ -56,7 +85,8 @@ $$
 
 We calculate partial derivatives:
 
-$$\begin{aligned}
+$$
+\begin{aligned}
 \frac{\partial l}{\partial \mu} &= \frac{X - \mu}{\sigma ^ 2} \\
 \frac{\partial l}{\partial \sigma} &= \frac{-1}{\sigma} + \frac{(X - \mu)^2}{\sigma ^ 3}\\
 \frac{\partial^2 l}{\partial \mu^2} &= \frac{-1}{\sigma^2}\\
@@ -109,6 +139,23 @@ $$
 
 ## Question 8
 
+### 8, part i
 
+$$
+|G(X) - G(X')| = \lvert\sup_{f \in \mathcal{F}}|\bar Y - \mathbb{E}\bar Y| - \sup_{g \in \mathcal{F}}|\bar W - \mathbb{E}\bar W|\rvert \le |\sup_{f\in\mathcal{F}}|Y - \mathbb{E}\bar Y|| \le 2K
+$$
+
+
+### 8, part ii
+
+We showed in part i the bounded differences hypothesis for Theorem 2.14. 
+Then 
+
+
+$$
+\begin{aligned}
+\mathbb{P}\left( |Y - \mathbb{E}Y | \ge t\right) \le 2\exp\left(- \frac{2t^2}{\sum_{i=1}^nc_i^2}\right)
+\end{aligned}
+$$
 
 

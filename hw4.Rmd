@@ -12,6 +12,27 @@ output:
 ## Question 1
 
 
+### Q1, part i
+
+$$
+\begin{aligned}
+D(\mathbb{P}||\mathbb{Q}) &= \sum_{x=0}^{\infty}\left(\frac{e^{-\mu_1}\mu_1^x}{x!}\log \left[ \frac{e^{-\mu_1}\mu_1^x}{e^{-\mu_2}\mu_2^x}\right] \right) \\
+&=\sum_{x=0}^{\infty}\left(\left[\frac{e^{-\mu_1}\mu_1^x}{x!} \right]\left[ -\mu_1 + \mu_2 + x \log\left(\frac{\mu_1}{\mu_2}\right)\right] \right) \\
+&= \sum_{x=0}^{\infty}(\mu_2 - \mu_1)\frac{e^{-\mu_1}\mu_1^x}{x!} + \sum_{x=1}^{\infty}\frac{e^{-\mu_1}\mu_1^{x-1}}{(x-1)!}\left(\mu_1\log\frac{\mu_1}{\mu_2}\right)\\
+&= \mu_2 - \mu_1 + \mu_1 \log\frac{\mu_1}{\mu_2}
+\end{aligned}
+$$
+
+### Q1, part ii
+
+$$
+\begin{aligned}
+D(\mathbb{P}|| \mathbb{Q}) &= \mathbb{E_1}\left(\log\left[ \frac{\mu_1e^{-\mu_1x}}{\mu_2e^{-\mu_2x}}\right]\right) \\
+&= \mathbb{E_1}\left( \log\frac{\mu_1}{\mu_2}- \mu_1x + \mu_2 x\right)\\
+&= \log\frac{\mu_1}{\mu_2} - \mu_1^2 + \mu_1\mu_2
+\end{aligned}
+$$
+
 
 ## Question 2
 
@@ -66,6 +87,10 @@ $$
 
 
 ## Question 5
+
+
+
+
 
 ## Question 6
 

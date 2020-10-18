@@ -83,7 +83,7 @@ $$
 
 ## Question 4
 
-
+ 
 
 
 ## Question 5
@@ -135,13 +135,24 @@ $$
 
 ### 7, part i
 
+First, define $Y_i = f(X_i) - \mathbb{E}(f(X_i))$.
 
+Then compute:
 
+$$
+\begin{aligned}
+(n-1)\mathbb{E}V_n^2 &= \sum_{i=1}^n \mathbb{E}\left(Y_i - \bar Y\right)^2 \\
+&= \sum_{i=1}^n \mathbb{E}\left(Y_i^2 - 2\bar Y Y_i + \bar Y^2\right) \\
+&= \sum_i \mathbb{E}\left(Y_i^2\right) -\frac{2}{n} \sum_i \mathbb{E}Y_i^2 + n \mathbb{E}\bar Y^2 - 2 \sum_i \sum_{j \neq i}\mathbb{E}(Y_i Y_j) \\
+&= (n-2)\mathbb{E}Y_1^2 + \mathbb{E}Y_1^2 \\
+&= (n-1)\mathbb{E}(Y_1^2) \\
+&= (n-1)Var(f(X))
+\end{aligned}
+$$
 
+For the second conclusion, we want to use the strong law of large numbers. We need to verify that 
+the assumptions of the theorem are met. We note that $f$ is bounded, so the SLLN applies.
 
-For the second conclusion, we want to use the weak law of large numbers. We need to verify that 
-the assumptions of the theorem are met.
-The weak law of large numbers states that 
 
 
 

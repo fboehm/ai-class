@@ -83,7 +83,40 @@ $$
 
 ## Question 4
 
- 
+### Q4, Part i
+First, define the estimators of the probabilities:
+
+$$\hat p^X_n(x) = \frac{|\{i:X_i = x \}|}{n}$$
+$$\hat p^Y_n(y) = \frac{|\{i:Y_i = y \}|}{n}$$
+
+$$\hat p^{X,Y}_n(x,y) = \frac{|\{i:X_i = x, Y_i = y \}|}{n}$$
+Then, define:
+
+$$\hat I_n(X, Y) = \hat H_n(X) + \hat H_n(Y) - \hat H_n(X, Y)$$
+
+$$\hat H(X, Y) = - \sum_{x, y}\hat p_n^{X, Y}(x,y)\log \hat p_n^{X, Y}(x,y)$$
+
+
+
+
+
+### Q4, Part ii
+
+
+We follow the steps in the proof of Theorem 2.15.
+
+$$
+\begin{aligned}
+&|\hat I_n((x_1, y_1), \ldots, (x_i, y_i), \ldots, (x_n, y_n)) - \hat I_n((x_1, y_1), \ldots, (x_i', y_i'), \ldots, (x_n, y_n)) | \le \\
+&\le 2 \sup |\frac{j+1}{n}\log \frac{j + 1}{n} - \frac{j}{n}\log \frac{j}{n} + \frac{k+1}{n}\log \frac{k + 1}{n} - \frac{k}{n}\log \frac{k}{n} - \frac{(j+1)(k+1)}{n^2} \log \frac{(j+1)(k+1)}{n^2} + \frac{jk}{n^2}\log \frac{jk}{n^2}|\\
+&\le 4 \sup |\frac{j + 1}{n}\log \frac{j + 1}{n} - \frac{j}{n}\log \frac{j}{n}| + 2\sup |- \frac{(j+1)(k+1)}{n^2} \log \frac{(j+1)(k+1)}{n^2} + \frac{jk}{n^2}\log \frac{jk}{n^2}| \\
+&\le 4 \frac{\log n}{n} +  2\frac{\log n}{n ^ 2}
+\end{aligned}
+$$
+Setting this value equal - call it $c$ - to $c_i$ for all $i$, we get:
+
+$$\mathbb{P}\left(|\hat I_n - I | \ge t\right) \le 2\exp\left(- \frac{2t^2}{nc^2} \right)$$
+
 
 
 ## Question 5
@@ -168,10 +201,26 @@ V_n^2 &= \frac{1}{n-1}\sum_{i = 1}^n(Y_i - \bar Y) ^ 2\\
 \end{aligned}
 $$
 
+First, observe that it's possible for $n$ values to all have the same value, say, $b$. 
+
+The maximum difference is achieved when this occurs and the replaced value is $a$. 
+
+So, compare the sample variances for the realized values $(a, a, \ldots, a)$ vs. $(b, a, a, \ldots, a)$. The former has sample variance equal to zero, while the latter has sample mean $\bar y = \frac{(n-1)a + b}{n}$ and sample variance:
+
+$$
+\begin{aligned}
+(n-1)s^2 &= \left((\bar y - b)^2 + (n-1)(\bar y - a)^2 \right)\\
+&= (n-1)\frac{(b - a)^2}{n^2} +  \frac{(n-1)^2}{n^2}(a-b)^2 \\
+&= \frac{1}{n^2}(a-b)^2 \left(n-1 + (n-1)^2\right) = \frac{(a-b)^2n(n-1)}{n^2} \\
+&\implies s^2 = \frac{(a-b)^2}{n}
+\end{aligned}
+$$
+Thus, $c = \frac{(a-b)^2}{n}$.
+
 
 ### 7, part iii
 
-
+$$\mathbb{P}(|V_n^2 - \mathbb{E}V_n^2 | \ge t) \le 2\exp \left(-\frac{2nt^2}{(a-b)^2}\right)$$
 
 ## Question 8
 

@@ -194,13 +194,6 @@ the assumptions of the theorem are met. We note that $f$ is bounded, so the SLLN
 
 We need to show that $V_n^2$ has bounded differences.
 
-$$
-\begin{aligned}
-V_n^2 &= \frac{1}{n-1}\sum_{i = 1}^n(Y_i - \bar Y) ^ 2\\
-|V_n^2 - V_{n'}^2| &= \frac{1}{n^2(n - 1)}|\sum_{i = 1}^n(nY_i - \sum_{i=1}^n Y_i) ^ 2 - \sum_{i = 1}^n(nY_i - \bar Y') ^ 2
-\end{aligned}
-$$
-
 First, observe that it's possible for $n$ values to all have the same value, say, $b$. 
 
 The maximum difference is achieved when this occurs and the replaced value is $a$. 
@@ -220,7 +213,7 @@ Thus, $c = \frac{(a-b)^2}{n}$.
 
 ### 7, part iii
 
-$$\mathbb{P}(|V_n^2 - \mathbb{E}V_n^2 | \ge t) \le 2\exp \left(-\frac{2nt^2}{(a-b)^2}\right)$$
+$$\mathbb{P}(|V_n^2 - \mathbb{E}V_n^2 | \ge t) \le 2\exp \left(-\frac{2nt^2}{(a-b)^4}\right)$$
 
 ## Question 8
 

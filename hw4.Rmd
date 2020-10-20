@@ -27,8 +27,8 @@ $$
 
 $$
 \begin{aligned}
-D(\mathbb{P}|| \mathbb{Q}) &= \mathbb{E_1}\left(\log\left[ \frac{\mu_1e^{-\mu_1x}}{\mu_2e^{-\mu_2x}}\right]\right) \\
-&= \mathbb{E_1}\left( \log\frac{\mu_1}{\mu_2}- \mu_1x + \mu_2 x\right)\\
+D(\mathbb{P}|| \mathbb{Q}) &= \mathbb{E}_1\left(\log\left[ \frac{\mu_1e^{-\mu_1x}}{\mu_2e^{-\mu_2x}}\right]\right) \\
+&= \mathbb{E}_1\left( \log\frac{\mu_1}{\mu_2}- \mu_1x + \mu_2 x\right)\\
 &= \log\frac{\mu_1}{\mu_2} - \mu_1^2 + \mu_1\mu_2
 \end{aligned}
 $$

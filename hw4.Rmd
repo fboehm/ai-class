@@ -121,7 +121,41 @@ $$\mathbb{P}\left(|\hat I_n - I | \ge t\right) \le 2\exp\left(- \frac{2t^2}{nc^2
 
 ## Question 5
 
+### Q5, part i
 
+First, observe that we can Taylor expand $\log f(x; \theta + \epsilon)$.
+
+$$
+\begin{aligned}
+\log f(x; \theta + \epsilon) = \log f(x; \theta) + \epsilon \frac{\partial }{\partial \theta}\log f(x; \theta) + \frac{\epsilon ^ 2}{2}\frac{\partial ^ 2}{\partial \theta ^ 2}\log f(x; \theta) + \delta
+\end{aligned}
+$$
+We take the expectation (with respect to $f_{\theta}$ of the KL divergence:
+
+$$
+\begin{aligned}
+\int \left[f(x; \theta)\log f(x; \theta) - f(x;\theta) \log f(x; \theta + \epsilon) \right]dx & \approx \int \epsilon \frac{\partial}{\partial \theta}\log f(x; \theta) + \frac{\epsilon^2}{2}\frac{\partial ^ 2}{\partial \theta ^ 2}\log f(x; \theta) \\
+&= \int \frac{\epsilon ^ 2}{2}\frac{\partial^2}{\partial \theta ^ 2}\log f(x;\theta)\\
+&= \frac{\epsilon ^ 2}{2}\mathcal{I}(\theta)
+\end{aligned}
+$$
+The second line follows from the first because the mean of the score is equal to zero.
+
+### Q5, part ii
+
+This follows from above.
+
+
+
+### Q5, part iii
+
+Here, we expand both terms and observe that the $\epsilon ^ 3$ terms cancel.
+
+$$
+\begin{aligned}
+\int 
+\end{aligned}
+$$
 
 
 

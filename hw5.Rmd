@@ -24,7 +24,7 @@ f^*(y) &= \sup_{x} \left( xy - f(x\right)\\
 &\implies \frac{d}{dx}\left(xy - |x|^p\right) = y - p |x|^{p-1} = 0\\
 &\implies \frac{y}{p} = |x|^{p-1}\\
 &\implies \hat x = \left(\frac{y}{p}\right) ^ {\frac{1}{p-1}}\\
-& \implies f^*(y) = y\left( \frac{y}{p}\right) ^{p-1} - \left(\frac{y}{p}\right) ^ {\frac{p}{p-1}}
+& \implies f^*(y) = y\left( \frac{y}{p}\right) ^{\frac{1}{p-1}} - \left(\frac{y}{p}\right) ^ {\frac{p}{p-1}}
 \end{aligned}
 $$
 

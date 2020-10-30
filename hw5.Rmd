@@ -1,0 +1,44 @@
+---
+title: "Homework 5"
+author: "Frederick J. Boehm"
+date: "10/15/2020"
+classoption: landscape
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+## Question 1
+
+### Q1, part i
+
+
+
+### Q1, part ii
+
+$$
+\begin{aligned}
+f^*(y) &= \sup_{x} \left( xy - f(x\right)\\
+&= \sup_{x} \left( xy - |x|^p\right)\\
+&\implies \frac{d}{dx}\left(xy - |x|^p\right) = y - p |x|^{p-1} = 0\\
+&\implies \frac{y}{p} = |x|^{p-1}\\
+&\implies \hat x = \left(\frac{y}{p}\right) ^ {\frac{1}{p-1}}\\
+& \implies f^*(y) = y\left( \frac{y}{p}\right) ^{p-1} - \left(\frac{y}{p}\right) ^ {\frac{p}{p-1}}
+\end{aligned}
+$$
+
+### Q1, part iii
+
+$$
+\begin{aligned}
+f^*(y) &= \sup_x\left(xy - f(x) \right)\\
+&= \sup_x \left(xy - x\log x \right)\\
+&\implies \frac{d}{dx}\left(xy - \log x  \right) = y - \log x - 1 = 0\\
+& \implies y = \log x + 1 \\
+& \implies \hat x = e^{y-1}\\
+& \implies f^*(y) = ye^{y-1} - (y-1) e^{y-1} = e^{y-1}
+\end{aligned}
+$$
+
+

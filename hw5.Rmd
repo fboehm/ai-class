@@ -41,4 +41,38 @@ f^*(y) &= \sup_x\left(xy - f(x) \right)\\
 \end{aligned}
 $$
 
+## Question 2
+
+
+## Question 3
+
+### Q3, part i
+
+we first calculate the marginal density of the x's. 
+
+$$
+\begin{aligned}
+p(x_1, \ldots, x_n) &= \int p(x_1, \ldots, x_n)p(\theta)d\theta \\
+&= \int \theta ^ {a-1 + \sum_{i=1}^n x_i} e^{-n\theta - b\theta}\left(\frac{b^a}{\Gamma(b)}\right)\left(\frac{1}{\prod_{i=1}^n}x_i!\right)d\theta\\
+&= \left(\frac{b^a}{\Gamma(b)}\right) \left(\frac{1}{\prod_{i=1}^n x_i!} \right)\int \theta ^{a - 1 + \sum_{i=1}^nx_i} e^{-\theta(n + b)}\left(\frac{(n + b)^{a + \sum x_i}}{(n + b )^{a + \sum x_i}} \right)\left( \frac{\Gamma(n + b)}{\Gamma(n + b)}\right)d\theta\\
+&= \left(\frac{b^a}{\Gamma(b)}\right) \left(\frac{\Gamma(n + b)}{(n + b)^{a + \sum x_i}} \right)\left(\frac{1}{\prod x_i!} \right)
+\end{aligned}
+$$
+Note that the last equality follows from the observation that the integrand is a multiple of a gamma density. 
+
+We then calculate the posterior density.
+
+$$
+\begin{aligned}
+p(\theta|x_1, \ldots, x_n) &= \frac{p(x_1, \ldots, x_n | \theta)p(\theta)}{p(x_1, \ldots, x_n)} \\
+&= \left(\frac{\theta ^ {\sum x_i}e^{-n\theta}}{\prod x_i!}\right)\left( \frac{b^a\theta ^ {a-1}e^{-b\theta}}{\Gamma(b)}\right)\left(\frac{\Gamma(b)}{b^a}\right)\left( \frac{(n + b)^ {a + \sum x_i}}{\Gamma(n + b)}\right)\left(\prod x_i!\right) \\
+&= \frac{\theta ^ {a - 1 + \sum x_i}e^{-\theta (n + b)}(n + b)^{a + \sum x_i}}{\Gamma(n + b)}
+\end{aligned}
+$$
+
+### Q3, part ii
+
+
+### Q3, part iii
+
 

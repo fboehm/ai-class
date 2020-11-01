@@ -13,13 +13,34 @@ output:
 
 ### Q1, part i
 
+We see that 
+
+$$
+\begin{aligned}
+f^*(y) &= \sup_x \left( xy - |x| \right)\\
+&= 1_{|y| > 1}\infty
+\end{aligned}
+$$
+
+To see that this is the case consider, for $|y| \le 1$ and $x >0$:
+
+$$
+\begin{aligned}
+xy - |x| &= xy - x
+&\le 0\\
+\end{aligned}
+$$
+Additionally, we see that the supremum must be 0, rather than something smaller than zero, since, when $y=1$, 
+
+$$xy - x = x-x = 0$$
+
 
 
 ### Q1, part ii
 
 $$
 \begin{aligned}
-f^*(y) &= \sup_{x} \left( xy - f(x\right)\\
+f^*(y) &= \sup_{x} \left( xy - f(x)\right)\\
 &= \sup_{x} \left( xy - |x|^p\right)\\
 &\implies \frac{d}{dx}\left(xy - |x|^p\right) = y - p |x|^{p-1} = 0\\
 &\implies \frac{y}{p} = |x|^{p-1}\\
@@ -48,6 +69,7 @@ $$
 ### 2, part b
 
 ### 2, part c
+
 
 
 

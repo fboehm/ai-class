@@ -43,6 +43,19 @@ $$
 
 ## Question 2
 
+### 2, part a
+
+### 2, part b
+
+### 2, part c
+
+
+
+
+
+
+
+
 
 ## Question 3
 
@@ -71,6 +84,9 @@ p(\theta|x_1, \ldots, x_n) &= \frac{p(x_1, \ldots, x_n | \theta)p(\theta)}{p(x_1
 $$
 
 ### Q3, part ii
+
+
+
 
 
 ### Q3, part iii

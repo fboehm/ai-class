@@ -115,5 +115,33 @@ $$
 
 ## Question 4
 
+### Q4, part i
 
+To get the first equality, we interchange the order of integration and differentiation
+in the definition of $A_{\theta}$ before applying the (differentiation) chain rule.
+
+In symbols, we write:
+
+$$
+\begin{aligned}
+(A_{\theta})_{kl} &= \frac{\partial}{\partial \theta_k} \int f_l p d\nu \\
+&= \int \frac{\partial}{\partial \theta_k}(f_l p) d\nu \\ 
+& = \int f_l \frac{\partial p}{\partial \theta_k}d\nu + \int \frac{\partial f_l}{\partial \theta_k}p d\nu\\
+&= \int f_l \frac{\partial p}{\partial \theta_k}d\nu \\
+&= \int f_l \frac{\partial p}{\partial \theta_k}p (\frac{1}{p})d\nu \\
+&= \int f_l \frac{\partial \log p}{\partial \theta_k}p d\nu \\
+&= \int f_l W_k p d\nu \\
+&= \mathbb{E}\left( f_l W_k\right)
+\end{aligned}
+$$
+
+
+
+### Q4, part ii
+
+### Q4, part iii
+
+### Q4, part iv
+
+### Q4, part v
 

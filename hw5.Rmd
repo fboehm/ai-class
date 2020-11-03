@@ -1,7 +1,7 @@
 ---
 title: "Homework 5"
 author: "Frederick J. Boehm"
-date: "10/15/2020"
+date: "November 3, 2020"
 classoption: landscape
 output:
   pdf_document: default
@@ -66,6 +66,9 @@ $$
 
 ### 2, part a
 
+
+
+
 ### 2, part b
 
 ### 2, part c
@@ -113,6 +116,11 @@ $$
 
 ### Q3, part iii
 
+
+
+
+
+
 ## Question 4
 
 ### Q4, part i
@@ -139,9 +147,44 @@ $$
 
 ### Q4, part ii
 
+
+
+
+
 ### Q4, part iii
+
+First we establish the equality $$A_{\theta} = \mathbb{E}\left([f - \mathbb{E}f][T - \mathbb{E}T] \right)$$ where $T$ is the sufficient statistic and we're working in an exponential family with natural parameter $\eta$ and cgf $B$.
+
+We start at Equation 2.166:
+
+$$
+\begin{aligned}
+A_{\theta} &= \mathbb{E}\left( [f - \mathbb{E}f][W - \mathbb{E}W]\right)\\
+&= \mathbb{E}\left([f - \mathbb{E}f][(T - \frac{\partial B}{\partial \eta}) - \mathbb{E}(T - \frac{\partial B}{\partial \eta})] \right)\\
+& = \mathbb{E}\left([f - \mathbb{E}f][T - \frac{\partial B}{\partial \eta}] \right) \\
+&= \mathbb{E}\left([f - \mathbb{E}f][T - \mathbb{E}T] \right)
+\end{aligned}
+$$
+
+We now justify the above equalities. First, observe that $W = T - \frac{\partial B}{\partial \eta}$. This follows from definition of our exponential family. 
+
+Second, observe that $\mathbb{E}T = \frac{\partial B}{\partial \eta}$. This means that $\mathbb{E}(T - \frac{\partial B}{\partial \eta})$ is zero in the above equalities. Finally, we apply this relationship to get the third line equaling the fourth line. 
+
+We then argue that $f=T$ implies that $A_{\theta} = I_{\theta}$, the fisher information. This follows from the definition of Fisher information. 
+
+
+
+
 
 ### Q4, part iv
 
+We need to use the law of large numbers here. First, we verify the hypotheses of the strong law of large numbers.
+
+
+
+
 ### Q4, part v
+
+
+
 

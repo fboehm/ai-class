@@ -205,9 +205,29 @@ We then argue that $f=T$ implies that $A_{\theta} = I_{\theta}$, the fisher info
 
 ### Q4, part iv
 
-We need to use the law of large numbers here. First, we verify the hypotheses of the strong law of large numbers.
+First, we calculate the expected value of $\widehat{(A_{\theta})_{kl}}$. Second, we verify the assumptions of the strong law of large numbers before reaching the conclusion.
 
-Then we see that the expectation of $\widehat{(A_{\theta})_{kl}}$ is, in fact, $(A_{\theta})_{kl}$.
+#### Calculating the expected value of $\widehat{(A_{\theta})_{kl}}$
+
+We leverage the iid nature of the random variables throughout our argument. Superscript bars denote sample means.
+
+$$
+\begin{aligned}
+\mathbb{E}\left( [f_l(X_i) - \bar{f_l(X)}][T(X_i) - \bar{T(X)}]\right) &= \mathbb{E}\left(f_l(X_1)T(X_1) - \bar{f_l(X)}T(X_1) - f_l(X_1)\bar{T(X)} + \bar{f_l(X)}\bar{T(X)} \right)\\
+&= \mathbb{E}(f_l(X_1) T(X_1)) \left(1 - \frac{1}{n} \right) - \mathbb{E}\left(f_l(X_1) T(X_2) \right)\left( \frac{n-1}{n}\right)\\
+&= \frac{n-1}{n}(A_{\theta})_{kl}
+\end{aligned}
+$$
+Since we can apply Slutsky's theorem, we have, by the strong law of large numbers, the desired result. That is, $\frac{n-1}{n} \to 1$ as $n \to \infty$.
+
+#### Verifying assumptions of SLLN
+
+We verify the assumptions of the strong law of large numbers.
+
+We've already assumed finite second moments, and that is a sufficient condition for SLLN application, so we can use the Kolmogorov's SLLN without problems.
+
+
+
 
 
 

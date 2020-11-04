@@ -110,7 +110,34 @@ $$
 
 ### Q3, part ii
 
+We let $T$ denote the sufficient statistic and $\theta$ the canonical parameter.
 
+We then have
+
+$$
+p(x | \theta) = h(x) \exp\left( \theta T - A(\theta)\right)
+$$ 
+
+and 
+
+$$
+p(\theta | \eta, \zeta) = \exp\left( \eta \theta - \zeta A(\theta) - B(\eta, \zeta)\right)
+$$
+
+We compute the posterior distribution:
+
+$$
+\begin{aligned}
+p(\theta | x, \eta, \zeta) &= \frac{p(\theta | \eta, \zeta)p(x | \theta)}{\int p(\theta | \eta, \zeta)p(x | \theta)}\\
+&= \frac{h(x) \exp\left(\theta T + \eta T - \zeta A(\theta) - B(
+\eta, \zeta) - A(\theta)\right)}{\int p(\theta | \eta, \zeta)p(x | \theta)}\\
+&= \frac{\exp\left((\theta + \eta) T - (\zeta + 1) A(\theta) - B(
+\eta, \zeta)\right)}{\int \exp\left((\theta + \eta) T - (\zeta + 1) A(\theta) - B(
+\eta, \zeta)\right)} \\
+&= \frac{\exp\left((\theta + \eta) T - (\zeta + 1) A(\theta) \right)}{\int \exp\left((\theta + \eta) T - (\zeta + 1) A(\theta)\right) }
+\end{aligned}
+$$
+We then observe that the posterior has a form similar to that of the prior.
 
 
 
@@ -179,6 +206,8 @@ We then argue that $f=T$ implies that $A_{\theta} = I_{\theta}$, the fisher info
 ### Q4, part iv
 
 We need to use the law of large numbers here. First, we verify the hypotheses of the strong law of large numbers.
+
+Then we see that the expectation of $\widehat{(A_{\theta})_{kl}}$ is, in fact, $(A_{\theta})_{kl}$.
 
 
 

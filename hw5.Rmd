@@ -66,17 +66,37 @@ $$
 
 ### 2, part a
 
+This follows from the definition of conjugate function.
 
+See that
+
+$$
+P(Y \ge \mu > \mathbb{E}Y) \le \exp{\theta Y - }
+$$
 
 
 ### 2, part b
 
+We start with the relationship $A(\theta) + A^*(\mu) = \theta\mu$, which follows from the definition of conjugate function.
+
+We then see that $\frac{dA}{d\theta} = \mu$ and $\frac{dA^*}{d\mu} = \theta$, leading us to see
+that $\frac{d^2A}{d\theta^2} = \frac{d\mu}{d\theta}$ and $\frac{d^2A^*}{d\mu^2} = \frac{d\theta}{d\mu}$. Putting these expressions together, after recognizing that $\left(\frac{d\mu}{d\theta}\right)^{-1} = \frac{d\theta}{d\mu}$, we get the result.
+
+
+
 ### 2, part c
 
+#### Nonnegative second derivative
 
+We first show that $\frac{d^2A^*}{d\mu^2} (\mu) \ge 0$.
 
-
-
+$$
+\begin{aligned}
+\frac{d^2A}{d\theta^2} &= \frac{d^2}{d\theta^2}\left(\log \mathbb{E}e^{\theta Y}\right)\\
+&= \frac{\mathbb{E}(Y^2e^{Y\theta})}{\mathbb{E}e^{Y\theta}} - \frac{[\mathbb{E}(Ye^{Y\theta})]^2}{[\mathbb{E}(e^{Y\theta})]^2} \ge 0
+\end{aligned}
+$$
+We get the remaining results from the definition of the cumulant generating function and the results in part b.
 
 
 
@@ -148,6 +168,8 @@ We then observe that the posterior has a form similar to that of the prior.
 
 
 
+
+
 ## Question 4
 
 ### Q4, part i
@@ -173,6 +195,11 @@ $$
 
 
 ### Q4, part ii
+
+We note that $I_{\theta} = \mathbb{E}\left([W - \mathbb{E}W]^2 \right)$ and $V(f_l) = \mathbb{E}\left([f - \mathbb{E}f]^2 \right)$ and $|A_{\theta}|^2_{kl} = \left(\mathbb{E}\left[(f - \mathbb{E}f)(W - \mathbb{E}W)\right]\right)^2$. Assembling these together and applying Cauchy-Schwarz Theorem, we see that 
+
+$$|(A_{\theta})_{kl}|^2 \le \mathbb{V}f_l (I_{\theta})_{kk}$$
+
 
 
 

@@ -71,6 +71,16 @@ $$
 
 ### 2, part b
 
+
+We start with 
+
+$$
+\begin{aligned}
+\mu &= \frac{d}{d\theta}A \implies \\
+\frac{d\mu}{d\theta} &= \frac{d^2}{d\theta^2}A \\
+\end{aligned}
+$$
+
 ### 2, part c
 
 

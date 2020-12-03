@@ -39,7 +39,51 @@ $$
 
 ### Compute $\Lambda$
 
-### Compute eigenvalues and eigenvectors of $\Lambda$
+The precision matrix is:
+
+$$
+\Lambda = \frac{1}{2\sigma_1^2\sigma_2^2}\left(
+\begin{array}{cc}
+\sigma_1 ^ 2 + \sigma_2 ^ 2 & \sigma_2 ^ 2 - \sigma_1 ^ 2 \\
+\sigma_2 ^ 2 - \sigma_1 ^ 2 & \sigma_1 ^ 2 + \sigma_2 ^ 2
+\end{array} 
+\right)
+$$
+
+
+
+### Compute eigenvalues and eigenvectors of $\Sigma$
+
+
+$$
+\begin{aligned}
+0 &= det\left(\frac{1}{2}
+\begin{array}{cc}
+a + b - \lambda & b-a \\
+b-a & a + b - \lambda
+\end{array} 
+\right)\\
+&= (\frac{a + b}{2} - \lambda)^2 - (\frac{b-a}{2})^2\\
+&= ab + \lambda^2 - \lambda(a + b) = (a - \lambda)(b - \lambda)
+\end{aligned}
+$$
+Thus, the eigenvalues of $\Sigma$ are $\sigma_1^2$ and $\sigma_2^2$.
+
+
+
+So we now have the two eigenvalues, $\sigma_1^2$ and $\sigma_2^2$
+
+We then seek the corresponding eigenvectors.
+
+We see that these are $(1,1)$ and $(1, -1)$.
+
+
+
+
+
+
+
+
 
 
 ### Level curves of the pdf
@@ -50,8 +94,8 @@ s2 <- 10
 ```
 
 ```{r}
-x1 <- rnorm(n = 1000000, mean = 0, sd = sqrt(s1))
-x2 <- rnorm(n = 1000000, mean = 0, sd = sqrt(s2))
+x1 <- rnorm(n = 10000, mean = 0, sd = sqrt(s1))
+x2 <- rnorm(n = 10000, mean = 0, sd = sqrt(s2))
 z1 <- (x1 + x2) / sqrt(2)
 z2 <- (x1 - x2) / sqrt(2)
 ```
@@ -79,6 +123,8 @@ tibble::tibble(z1 = z1, z2 = z2) %>%
 
 ### Level curves
 
+
+## Part B: A summary of the two articles
 
 
 

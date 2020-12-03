@@ -1,0 +1,89 @@
+---
+title: "Homework 6"
+author: "Fred Boehm"
+date: "12/2/2020"
+output: pdf_document
+classoption: landscape
+---
+
+## Part A.i
+
+### Compute the covariance matrix of Z
+
+$$
+Var(Z_1) = \frac{1}{2}Var(X_1 + X_2) = \frac{1}{2}\left( \sigma_1 ^ 2 + \sigma_2 ^ 2\right)
+$$
+$$
+Var(Z_2) = \frac{1}{2}Var(X_1 - X_2) = \frac{1}{2}\left( \sigma_1 ^ 2 + \sigma_2 ^ 2\right)
+$$
+
+$$
+Cov(Z_1, Z_2) = \mathbb{E}(Z_1Z_2) - \mathbb{E}Z_1 \mathbb{E}Z_2 = \mathbb{E}(Z_1Z_2)
+$$
+and 
+
+$$
+\mathbb{E}(Z_1Z_2) = \frac{1}{2}\mathbb{E}\left( X_1 ^ 2 - X_2 ^ 2\right) = \frac{1}{2}\left( \sigma_1 ^ 2 - \sigma_2 ^ 2\right)
+$$
+Thus, 
+
+$$
+\Sigma = \frac{1}{2}\left(
+\begin{array}{cc}
+\sigma_1 ^ 2 + \sigma_2 ^ 2 & \sigma_1 ^ 2 - \sigma_2 ^ 2 \\
+\sigma_1 ^ 2 - \sigma_2 ^ 2 & \sigma_1 ^ 2 + \sigma_2 ^ 2
+\end{array} 
+\right)
+$$
+
+
+### Compute $\Lambda$
+
+### Compute eigenvalues and eigenvectors of $\Lambda$
+
+
+### Level curves of the pdf
+
+```{r}
+s1 <- 1
+s2 <- 10
+```
+
+```{r}
+x1 <- rnorm(n = 1000000, mean = 0, sd = sqrt(s1))
+x2 <- rnorm(n = 1000000, mean = 0, sd = sqrt(s2))
+z1 <- (x1 + x2) / sqrt(2)
+z2 <- (x1 - x2) / sqrt(2)
+```
+
+```{r}
+library(ggplot2)
+library(magrittr)
+tibble::tibble(z1 = z1, z2 = z2) %>%
+  ggplot() + geom_density_2d(aes(x = z1, y = z2))
+```
+
+## Part A.ii
+
+### Find the minimizer
+
+
+### Level curves
+
+
+
+## Part A.iii
+
+### Find the minimizer
+
+
+### Level curves
+
+
+
+
+
+
+
+
+

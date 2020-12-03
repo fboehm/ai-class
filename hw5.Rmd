@@ -77,7 +77,21 @@ $$
 
 ### 2, part b
 
+<<<<<<< HEAD
+
+We start with 
+
+$$
+\begin{aligned}
+\mu &= \frac{d}{d\theta}A \implies \\
+\frac{d\mu}{d\theta} &= \frac{d^2}{d\theta^2}A \\
+\end{aligned}
+$$
+
+### 2, part c
+=======
 We start with the relationship $A(\theta) + A^*(\mu) = \theta\mu$, which follows from the definition of conjugate function.
+>>>>>>> d8418e1f86ef1744a49ca150f784beb8fcffab2b
 
 We then see that $\frac{dA}{d\theta} = \mu$ and $\frac{dA^*}{d\mu} = \theta$, leading us to see
 that $\frac{d^2A}{d\theta^2} = \frac{d\mu}{d\theta}$ and $\frac{d^2A^*}{d\mu^2} = \frac{d\theta}{d\mu}$. Putting these expressions together, after recognizing that $\left(\frac{d\mu}{d\theta}\right)^{-1} = \frac{d\theta}{d\mu}$, we get the result.

@@ -3,7 +3,7 @@ title: "Homework 6"
 author: "Fred Boehm"
 date: "12/2/2020"
 output: pdf_document
-classoption: landscape
+bibliography: refs.bib
 ---
 
 ## Part A.i
@@ -126,9 +126,51 @@ tibble::tibble(z1 = z1, z2 = z2) %>%
 
 ## Part B: A summary of the two articles
 
+Bayesian inference for complex, multilevel statistical models historically 
+involved sampling-based Markov chain Monte Carlo (MCMC) methods. In this approach, 
+one constructs a Markov chain for which the stationary distribution is the posterior 
+distribution for the unknowns in the statistical model. Empirically summaries of the posterior distribution are
+computed from thousands of samples. 
+
+Over the last 20 years, researchers in machine learning and statistics have developed 
+variational inference methods for study of posterior distributions in complicated 
+Bayesian models. In variational inference, one specifies a simpler family of 
+distributions that approximate the posterior. One then chooses a distribution from the 
+from the approximation family. The chosen distribution minimizes (over the 
+approximation family members) the KL divergence with the posterior. 
+
+A major advantage of variational inference over sampling-based methods is the 
+lesser computing time for variational inference. Despite this advantage, variational 
+inference was plagued by the need for model-specific derivations. @ranganath2014black 
+recognized this shortcoming and developed black box variational inference to 
+address this issue. Their work enables rapid exploration of diverse collections of models.
+
+Black box variational inference uses stochastic optimization by calculating noisy 
+gradients of the evidence lower bound (ELBO). @ranganath2014black do this computation
+with Monte Carlo samples from the score function (Equation 3 in @ranganath2014black). 
+They incorporate Rao-Blackwellization and control variates to reduce the noisiness
+of the gradients. 
+
+@ranganath2014black achieve impressive results in evaluating their black box variational inference methods.
+Figure 1 of their article illustrates the acceleration in computing time. Figure 2
+shows the remarkable gradient variance reduction achieved with the Rao=-Blackwellization and control variates.
+
+@kucukelbir2015automatic go a step further in developing automatic differentation 
+variational inference (ADVI) for differentiable probability models. ADVI, which they 
+implement in the Stan programming language, first determines an appropriate variational 
+family. It then optimizes the 
+variational objective function, as in standard variational inference. With this 
+implementation, ADVI can be used for inference with any model that can be expressed in 
+Stan. 
 
 
 
+
+
+
+
+
+## References
 
 
 

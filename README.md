@@ -1,1 +1,2 @@
-# ai-class
+# ai-class at Umass-Amherst
+
